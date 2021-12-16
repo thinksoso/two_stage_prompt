@@ -7,7 +7,7 @@ from transformers import BertTokenizer, BertModel
 import numpy as np
 import pandas as pd
 
-template = "[s1] means [MASK]"
+template = "[s1] is [MASK]"
 def convert_prompt(sentence):
     s_new = template.replace("[s1]",sentence)
     return s_new
@@ -65,6 +65,7 @@ if __name__ == "__main__":
     print(df.shape)
     corr = df.corr('spearman')
     print(corr.shape)
+    print("template: {}".format(template))
     print("cls to label:{}".format(corr.iat[2,0]))
     print("mask to label:{}".format(corr.iat[2,1]))
     #save
