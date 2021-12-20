@@ -22,7 +22,7 @@ def convert_prompt(sentence, template, with_mask):
     return s_new
 
 
-def output_hidden(inputs, tokenizer, model, device, template, with_mask=False):
+def output_hidden(inputs, tokenizer, model, device, template):
 
     # with [mask] token, for MLM rep
     inputs_w_mask = convert_prompt(inputs, template, with_mask=True)
